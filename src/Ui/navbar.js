@@ -74,7 +74,7 @@ function Navbar() {
             <img src={closeIcon} alt="Close Icon" className="w-6 h-6" />
           </button>
         </div>
-        <div className="flex flex-col items-center gap-4 mt-8 text-[#000000] font-[400] text-[16px]">
+        <div className="flex flex-col items-start gap-4 mt-8 text-[#000000] font-[400] text-[16px] pl-4">
           {navItems.map((item) => (
             <Link key={item.path} to={item.path} onClick={toggleSidebar}>
               {item.name}
