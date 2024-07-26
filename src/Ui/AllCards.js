@@ -1,8 +1,10 @@
 import React from "react";
 
 // Card Component definition
-const Card = ({ percentage, heading, description }) => (
-  <div className="bg-[#EBDAD2] p-[32px] rounded-[14px]">
+const Card = ({ percentage, heading, description, gridColumn, gridRow }) => (
+  <div
+    className={`bg-[#EBDAD2] p-[32px] rounded-[14px] ${gridColumn} ${gridRow}`}
+  >
     <div className="text-left mb-4">
       <div className="text-[35px] font-bold text-[#214651]">{percentage}</div>
     </div>
@@ -21,21 +23,29 @@ function AllCards() {
       percentage: "30%",
       heading: "Short heading goes here",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      gridColumn: "col-start-1 col-end-2",
+      gridRow: "row-start-1 row-end-2",
     },
     {
       percentage: "30%",
       heading: "Short heading goes here",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      gridColumn: "col-start-2 col-end-3",
+      gridRow: "row-start-1 row-end-3",
     },
     {
       percentage: "30%",
       heading: "Short heading goes here",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      gridColumn: "col-start-1 col-end-2",
+      gridRow: "row-start-2 row-end-4",
     },
     {
       percentage: "30%",
       heading: "Short heading goes here",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      gridColumn: "col-start-2 col-end-3",
+      gridRow: "row-start-3 row-end-4",
     },
   ];
 
@@ -71,7 +81,21 @@ function AllCards() {
             {mainDescription}
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-center gap-[47px]">
+        {/* Mobile 2x2 grid with specified grid positions */}
+        <div className="grid grid-cols-2 grid-rows-3 gap-[20px] md:hidden">
+          {cardData.map((card, index) => (
+            <Card
+              key={index}
+              percentage={card.percentage}
+              heading={card.heading}
+              description={card.description}
+              gridColumn={card.gridColumn}
+              gridRow={card.gridRow}
+            />
+          ))}
+        </div>
+        {/* Desktop layout */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-[20px]">
           {cardData.map((card, index) => (
             <Card
               key={index}
