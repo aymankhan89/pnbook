@@ -1,52 +1,50 @@
-import React from 'react';
-
+import React from "react";
 
 const ClientLogosSection = ({ heading, logos }) => {
-  console.log("logos", logos)
   const getHighlightedText = (text) => {
     const parts = text.split(/(Companies Worldwide)/);
     return parts.map((part, index) =>
-      part === 'Companies Worldwide' ? (
-        <span key={index} className=" italic text-[#FFC17A]">{part}</span>
+      part === "Companies Worldwide" ? (
+        <span key={index} className="italic text-[#FFC17A]">
+          {part}
+        </span>
       ) : (
         part
       )
     );
   };
-  console.log(logos)
-  console.log(heading)
 
   return (
-    <div className='pt-[100px]'>
-    <div className="bg-[#214651] text-white  flex px-[100px]  py-[30px] gap-[300px]   ">
-        <div>
-      <h2 className="text-[25px] font-[500] flex-1 w-[355px] ">{getHighlightedText(heading)}</h2>
+    <div className="pt-[100px]">
+      <div className="bg-[#214651] text-white flex flex-col md:flex-row px-[20px] md:px-[100px] py-[30px] gap-[20px] md:gap-[300px]">
+        <div className="flex-1">
+          <h2 className="text-[25px] font-[500] w-full md:w-[355px] mb-[20px] md:mb-0">
+            {getHighlightedText(heading)}
+          </h2>
+        </div>
+        <div className="grid grid-cols-2 md:flex  md:gap-[45px] justify-start">
+          {logos.map((logo, index) => (
+            <img
+              key={index}
+              src={logo.src}
+              alt={logo.alt}
+              className="h-20 w-20"
+            />
+          ))}
+        </div>
       </div>
-      <div className="flex gap-[45px] ">
-        {logos.map((logo, index) => (
-          <img
-            key={index}
-            src={`${logo.src}`}
-            alt={logo.alt}
-            className="h-20 w-20 "
-          />
-        ))}
-      </div>
-    </div>
     </div>
   );
 };
 
-
 const ClientLogos = () => {
-  const mainHeading = 'Trusted by Leading Companies Worldwide';
+  const mainHeading = "Trusted by Leading Companies Worldwide";
   const Logos = [
-    { src: '/Relume.svg', alt:"asdn" },
-    { src: '/Webflow.svg', alt:"asdn" },
-    { src: '/Relume.svg', alt:"asdn" },
-    { src: '/Webflow.svg', alt:"asdn" },
-    { src: '/Relume.svg', alt:"asdn" },
-    
+    { src: "/Relume.svg", alt: "Relume Logo" },
+    { src: "/Webflow.svg", alt: "Webflow Logo" },
+    { src: "/Relume.svg", alt: "Relume Logo" },
+    { src: "/Webflow.svg", alt: "Webflow Logo" },
+    { src: "/Relume.svg", alt: "Relume Logo" },
   ];
 
   return (
