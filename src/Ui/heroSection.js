@@ -49,10 +49,17 @@ function HeroSection({
               </a>
             </div>
           </div>
-          <div className="col-start-1 lg:col-start-8 col-end-13 flex justify-center items-center mt-8 lg:mt-0">
+          <div className="flex flex-col lg:flex-row col-start-1 lg:col-start-8 col-end-13 items-center mt-8 lg:mt-0">
+            {/* Mobile Image */}
             <img
-              className="w-full lg:w-auto"
-              src="/herSectionImg.svg"
+              className="block lg:hidden w-full"
+              src="/src/Ui/Subtract.svg" // Mobile image path
+              alt="mockup mobile"
+            />
+            {/* Desktop Image */}
+            <img
+              className="hidden lg:block w-full lg:w-auto"
+              src="/herSectionImg.svg" // Desktop image path
               alt="mockup"
             />
           </div>
