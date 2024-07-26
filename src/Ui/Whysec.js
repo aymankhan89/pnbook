@@ -1,15 +1,7 @@
 import React from "react";
 
-// ServicesImg Component
-const ServicesImg = () => (
-  <div
-    className="bg-[url('/public/whyimg.svg')] bg-cover bg-center "
-    style={{ width: "350px", height: "450px" }}
-  ></div>
-);
-
 const Card = ({ heading, description }) => (
-  <div className="">
+  <div className="rounded-[15px] p-4 w-full md:w-[542px]">
     <div>
       <h3 className="text-[22px] font-[500] text-[#214651] mb-1">{heading}</h3>
       <p className="text-[#202020] font-[400] text-[15px]">{description}</p>
@@ -39,7 +31,7 @@ const Whysec = () => {
   const mainHeading = "How We Make Finances Easy";
   const highlightedWords = [" Finances Easy"];
   const mainDescription =
-    "Unlock your business's potential with our expert accounting services. Our dedicated.";
+    "Unlock your business's potential with our expert accounting services. Our dedicated team provides you with insights and tools to drive your business forward.";
 
   const getHighlightedText = (text, highlights) => {
     const parts = text.split(new RegExp(`(${highlights.join("|")})`, "gi"));
@@ -55,18 +47,18 @@ const Whysec = () => {
   };
 
   return (
-    <div className="pt-[120px]  text-black flex w-full justify-center items-center">
-      <div className="relative w-[85%] flex">
-        <div className="flex-1 ">
+    <div className="pt-[120px] text-black flex w-full justify-center items-center">
+      <div className="relative w-[90%] md:w-[85%] flex flex-col md:flex-row">
+        <div className="flex-1 mb-8 md:mb-0 md:pr-8">
           <div className="pb-[60px]">
-            <p className="text-[35px] font-[500] mb-4 w-[457px]">
+            <p className="text-[30px] md:text-[35px] font-[500] mb-4 w-full md:w-[457px]">
               {getHighlightedText(mainHeading, highlightedWords)}
             </p>
-            <p className="text-[17px] font-[400] mb-8 w-[384px]">
+            <p className="text-[16px] md:text-[17px] font-[400] mb-8 w-full md:w-[384px]">
               {mainDescription}
             </p>
           </div>
-          <div className="flex flex-col gap-[65px] w-[572px]">
+          <div className="flex flex-col gap-[40px] md:gap-[65px]">
             {cardData.map((card, index) => (
               <Card
                 key={index}
@@ -76,8 +68,12 @@ const Whysec = () => {
             ))}
           </div>
         </div>
-        <div className="mt-[200px]">
-          <ServicesImg />
+        <div className="w-full md:w-auto md:ml-8">
+          <img
+            className="w-full md:w-[457px] md:h-[584px]"
+            src="/whyimg.svg"
+            alt=""
+          />
         </div>
       </div>
     </div>
