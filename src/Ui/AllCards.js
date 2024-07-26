@@ -3,15 +3,17 @@ import React from "react";
 // Card Component definition
 const Card = ({ percentage, heading, description, gridColumn, gridRow }) => (
   <div
-    className={`bg-[#EBDAD2] p-[32px] rounded-[14px] ${gridColumn} ${gridRow}`}
+    className={`bg-[#EBDAD2] p-4 rounded-[14px] ${gridColumn} ${gridRow} md:p-[32px]`}
   >
-    <div className="text-left mb-4">
-      <div className="text-[35px] font-bold text-[#214651]">{percentage}</div>
+    <div className="text-left mb-2 md:mb-4">
+      <div className="text-[24px] md:text-[35px] font-bold text-[#214651]">
+        {percentage}
+      </div>
     </div>
-    <h2 className="text-[16px] md:text-[18px] lg:text-[20px] font-semibold text-black text-left mb-2">
+    <h2 className="text-[14px] md:text-[16px] lg:text-[18px] font-semibold text-black text-left mb-2">
       {heading}
     </h2>
-    <p className="text-black text-[14px] md:text-[16px] lg:text-[18px] text-left">
+    <p className="text-black text-[12px] md:text-[14px] lg:text-[16px] text-left">
       {description}
     </p>
   </div>
@@ -60,7 +62,7 @@ function AllCards() {
       highlights.includes(part) ? (
         <span
           key={index}
-          className="font-[500] italic text-blue-900 text-[24px] md:text-[28px] lg:text-[32px]"
+          className="font-[500] italic text-blue-900 text-[18px] md:text-[24px] lg:text-[28px]"
         >
           {part}
         </span>
@@ -71,18 +73,18 @@ function AllCards() {
   };
 
   return (
-    <div className="w-full flex justify-center pt-[min(120px,max(70px,8.785vw))]">
-      <div className="p-8 w-[90%]">
-        <div className="flex flex-col gap-[20px] mb-[55px]">
-          <p className="text-[24px] md:text-[28px] lg:text-[32px] font-[500]">
+    <div className="w-full flex justify-center pt-[min(60px,max(40px,5vw))]">
+      <div className="p-4 md:p-8 w-[90%] md:w-[80%]">
+        <div className="flex flex-col gap-[10px] md:gap-[20px] mb-[30px] md:mb-[55px]">
+          <p className="text-[20px] md:text-[24px] lg:text-[28px] font-[500]">
             {getHighlightedText(mainHeading, highlightedWords)}
           </p>
-          <p className="text-[14px] md:text-[16px] lg:text-[18px] font-[400] text-[#202020] text-left mb-8 w-full md:w-[462px]">
+          <p className="text-[12px] md:text-[14px] lg:text-[16px] font-[400] text-[#202020] text-left mb-6 w-full">
             {mainDescription}
           </p>
         </div>
         {/* Mobile 2x2 grid with specified grid positions */}
-        <div className="grid grid-cols-2 grid-rows-3 gap-[20px] md:hidden">
+        <div className="grid grid-cols-2 grid-rows-2 gap-[10px] md:hidden">
           {cardData.map((card, index) => (
             <Card
               key={index}
