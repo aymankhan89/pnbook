@@ -9,7 +9,7 @@ const Card = ({ percentage, heading, description }) => (
     <h2 className="text-[16px] md:text-[18px] lg:text-[20px] font-semibold text-black text-left mb-2">
       {heading}
     </h2>
-    <p className="text-red-900 text-[14px] md:text-[16px] lg:text-[18px] text-left">
+    <p className="text-black text-[14px] md:text-[16px] lg:text-[18px] text-left">
       {description}
     </p>
   </div>

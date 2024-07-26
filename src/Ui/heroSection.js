@@ -28,7 +28,7 @@ function HeroSection({
                 </p>
               </div>
               <div className=" w-[738px] flex flex-col gap-[25px]">
-                <h1 className="text-[45px] font-[500]  text-[#721818] leading-[60px]">
+                <h1 className="text-[45px] font-[500]  text-[#F9F9F9] leading-[60px]">
                   {title}
                 </h1>
                 <p className="font-[400] text-[17px] text-[#FBFBFB]">
