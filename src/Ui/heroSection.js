@@ -52,8 +52,8 @@ function HeroSection({
           <div className="flex flex-col lg:flex-row col-start-1 lg:col-start-8 col-end-13 items-center mt-8 lg:mt-0">
             {/* Mobile Image */}
             <img
-              className="block lg:hidden w-full"
-              src="/src/Subtract.svg" // Mobile image path
+              className="block lg:hidden w-full h-auto max-w-[400px] mx-auto"
+              src="/herosectionImgMobile.svg" // Mobile image path
               alt="mockup mobile"
             />
             {/* Desktop Image */}
