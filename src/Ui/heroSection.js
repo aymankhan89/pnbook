@@ -53,7 +53,7 @@ function HeroSection({
             {/* Mobile Image */}
             <img
               className="block lg:hidden w-full"
-              src="/src/Ui/Subtract.svg" // Mobile image path
+              src="/Subtract.svg" // Mobile image path
               alt="mockup mobile"
             />
             {/* Desktop Image */}
