@@ -96,7 +96,7 @@ const Testimonial = ({ className }) => {
   return (
     <div className="relative flex justify-center items-center pt-[min(120px,max(70px,8.785vw))]">
       <div
-        className={`self-stretch flex flex-row items-start justify-center w-full px-[1.25rem] pb-[0.881rem] box-border max-w-full text-left text-[2rem] text-gray-400 font-text-regular-normal ${className}`}
+        className={`self-stretch flex flex-row items-start justify-center w-full  pb-[0.881rem] box-border max-w-full text-left text-[2rem] text-gray-400 font-text-regular-normal ${className}`}
       >
         <div className="flex flex-col w-[80%] gap-[5rem] max-w-full">
           <div className="flex flex-col items-start justify-start gap-[1.25rem] max-w-full">
@@ -104,7 +104,7 @@ const Testimonial = ({ className }) => {
               <span className="font-medium">Trusted by Our </span>
               <i className="font-medium text-[#214651]">Happy Customers</i>
             </h1>
-            <div className="w-[27.188rem] text-[1rem] text-[#202020] leading-[1.688rem]">
+            <div className=" md:w-[27.188rem] text-[1rem] text-[#202020] leading-[1.688rem]">
               Experience unmatched quality and expertise. We're here to help you
               succeed and grow
             </div>
