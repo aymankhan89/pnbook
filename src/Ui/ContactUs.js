@@ -4,7 +4,7 @@ const ContactUs = ({ className = "" }) => {
   return (
     <div className="w-full flex justify-center pt-[100px]">
       <div
-        className={`self-stretch border rounded-[15px] bg-[#214651] w-[90%] flex flex-col md:flex-row items-start p-[24px] box-border max-w-full gap-[1.25rem] text-left text-[2rem] text-sandybrown font-playfair-display ${className}`}
+        className={`self-stretch border rounded-[15px] md:px-[95px]  md:py-[75px] bg-[#214651] w-[90%] flex flex-col md:flex-row items-start p-[24px] box-border max-w-full gap-[1.25rem] text-left text-[2rem] text-sandybrown font-playfair-display ${className}`}
       >
         <div className="w-full text-[#F5F5F5] flex flex-col items-start gap-[3.125rem]">
           <div className="self-stretch flex flex-col items-start gap-[1.25rem]">
