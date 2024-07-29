@@ -60,7 +60,7 @@ const ContactUs = ({ className = "" }) => {
               <div className="flex-1 flex flex-col gap-[0.5rem]">
                 <div className="leading-[150%]">Last name</div>
                 <input
-                  className="w-full border-none outline-none bg-gray-100 h-[2.5rem] rounded-[15px] p-[0.625rem] text-gray-200"
+                  className="w-full border-none outline-none bg-gray-100 h-[2.5rem] rounded-[15px] p-[0.625rem] text-black"
                   placeholder="Enter your last name"
                   type="text"
                 />
@@ -69,7 +69,7 @@ const ContactUs = ({ className = "" }) => {
             <div className="flex flex-col gap-[0.5rem]">
               <div className="leading-[150%]">Email</div>
               <input
-                className="w-full border-none outline-none bg-gray-100 h-[2.5rem] rounded-[15px] p-[0.625rem] text-gray-200"
+                className="w-full border-none outline-none bg-gray-100 h-[2.5rem] rounded-[15px] p-[0.625rem] text-black "
                 placeholder="Enter your email address"
                 type="text"
               />
@@ -77,7 +77,7 @@ const ContactUs = ({ className = "" }) => {
             <div className="flex flex-col gap-[0.5rem]">
               <div className="leading-[150%]">Phone number</div>
               <input
-                className="w-full border-none outline-none bg-gray-100 h-[2.5rem] rounded-[15px] p-[0.625rem] text-gray-200"
+                className="w-full border-none outline-none bg-gray-100 h-[2.5rem] rounded-[15px] p-[0.625rem] text-black "
                 placeholder="Enter your phone number"
                 type="text"
               />
@@ -122,13 +122,18 @@ const ContactUs = ({ className = "" }) => {
                 </div>
               </div>
             </div>
-            <div className="h-[11.25rem] rounded-[15px] bg-gray-100 flex flex-col p-[0.937rem] text-gray-200">
-              <div className="relative leading-[1.438rem] rounded-[15px]">
+            <div className="h-[11.25rem] rounded-[15px] bg-gray-100 flex flex-col p-[0.937rem]  text-black">
+              {/* <div className="relative leading-[1.438rem] rounded-[15px]">
                 Type your message...
-              </div>
+              </div> */}
+              <input
+                className="w-full border-none outline-none bg-gray-100 rounded-[15px] p-[0.625rem] text-gray-200"
+                placeholder=" Type your message..."
+                type="text"
+              />
             </div>
           </div>
-          <button className="cursor-pointer border-none py-[0.75rem] px-[1.125rem] bg-gray-100 rounded-[15px] hover:bg-gainsboro-200">
+          <button className="cursor-pointer border-none py-[0.75rem] px-[1.125rem] w-[95px] bg-gray-100 rounded-[15px] hover:bg-gainsboro-200">
             <div className="text-[1rem] font-semibold text-[#214651] text-center">
               Submit
             </div>
