@@ -87,15 +87,15 @@ const Services = () => {
   };
 
   return (
-    <div className="pt-[120px] px-4 sm:px-6 md:px-8">
+    <div className="pt-[120px]   ">
       <div className="relative w-full flex justify-center">
         <ServicesImg />
-        <div className="relative p-4 sm:p-6 md:p-8 flex flex-col md:flex-row items-center justify-between  bg-opacity-90 rounded-[15px] mx-auto max-w-[1200px]">
+        <div className="relative p-4 sm:p-6 gap-[256px] md:p-8 flex flex-col md:flex-row items-center justify-between  bg-opacity-90 rounded-[15px] ">
           <div className="flex-1 flex flex-col justify-center text-left text-white z-10">
-            <p className="text-[24px] sm:text-[28px] md:text-[40px] font-[500] mb-4">
+            <p className="text-[24px] sm:text-[28px] md:text-[40px] font-[500] mb-4  w-[565px]">
               {getHighlightedText(mainHeading, highlightedWords)}
             </p>
-            <p className="text-[14px] sm:text-[16px] md:text-[17px] font-[400] mb-8">
+            <p className="text-[14px] sm:text-[16px] md:text-[17px] font-[400] mb-8  w-[510px]">
               {mainDescription}
             </p>
           </div>
