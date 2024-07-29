@@ -61,7 +61,8 @@ const Testimonial = ({ className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const totalTestimonials = testimonials.length;
-  const testimonialsPerPage = 2; // Number of testimonials per page
+  const testimonialsPerPage = 2; // Number of testimonials per page for desktop
+  const testimonialsPerPageMobile = 1; // Number of testimonials per page for mobile
 
   const handleNext = () => {
     if (currentIndex + testimonialsPerPage < totalTestimonials) {
@@ -86,6 +87,8 @@ const Testimonial = ({ className }) => {
     testimonials[(currentIndex + 1) % totalTestimonials],
   ];
 
+  const currentTestimonialsMobile = [testimonials[currentIndex]];
+
   const isNextDisabled =
     currentIndex + testimonialsPerPage >= totalTestimonials;
   const isPrevDisabled = currentIndex === 0;
@@ -106,64 +109,120 @@ const Testimonial = ({ className }) => {
               succeed and grow
             </div>
           </div>
-          <div className="flex flex-col md:grid md:grid-cols-2 gap-[2rem] max-w-full">
-            {currentTestimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-start justify-start gap-[2rem] text-left text-[1rem] text-text-primary font-text-regular-normal"
-              >
-                <div className="overflow-hidden flex flex-row items-start justify-start gap-[0.375rem]">
-                  {[...Array(testimonial.rating)].map((_, starIndex) => (
-                    <img
-                      key={starIndex}
-                      className="h-[1.181rem] w-[1.25rem] relative min-h-[1.188rem]"
-                      alt={`Star ${starIndex + 1}`}
-                      src="/rating-star.svg"
-                    />
-                  ))}
-                </div>
-                <div className="self-stretch relative leading-[140%] text-[#202020]">
-                  {testimonial.text}
-                </div>
-                <div className="flex flex-row items-center justify-start gap-[1.25rem] max-w-full text-[#202020]">
-                  {testimonial.avatarImages.map((image, imgIndex) => (
-                    <img
-                      key={imgIndex}
-                      className="h-[3.5rem] w-[3.5rem] relative rounded-[50%] object-contain"
-                      loading="lazy"
-                      alt={`Avatar ${imgIndex + 1}`}
-                      src={image}
-                    />
-                  ))}
-                  <div className="flex flex-col items-start justify-start">
-                    <div className="relative leading-[150%] font-semibold inline-block min-w-[7rem]">
-                      {testimonial.name}
-                    </div>
-                    <div className="relative leading-[150%]">
-                      {testimonial.position}
-                    </div>
+          <div className="flex  grid gap-[2rem] max-w-full">
+            {/* Display testimonials based on screen size */}
+            <div className="block md:hidden">
+              {currentTestimonialsMobile.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-start justify-start gap-[2rem] text-left text-[1rem] text-text-primary font-text-regular-normal"
+                >
+                  <div className="overflow-hidden flex flex-row items-start justify-start gap-[0.375rem]">
+                    {[...Array(testimonial.rating)].map((_, starIndex) => (
+                      <img
+                        key={starIndex}
+                        className="h-[1.181rem] w-[1.25rem] relative min-h-[1.188rem]"
+                        alt={`Star ${starIndex + 1}`}
+                        src="/rating-star.svg"
+                      />
+                    ))}
                   </div>
-                  <div className="h-[3.875rem] w-[0.063rem] relative box-border border-r-[1px] border-solid border-black" />
-                  <img
-                    className="h-[3.5rem] w-[8.75rem] relative overflow-hidden"
-                    loading="lazy"
-                    alt=""
-                    src={testimonial.logo}
-                  />
+                  <div className="self-stretch relative leading-[140%] text-[#202020]">
+                    {testimonial.text}
+                  </div>
+                  <div className="flex flex-row items-center justify-start gap-[1.25rem] max-w-full text-[#202020]">
+                    {testimonial.avatarImages.map((image, imgIndex) => (
+                      <img
+                        key={imgIndex}
+                        className="h-[3.5rem] w-[3.5rem] relative rounded-[50%] object-contain"
+                        loading="lazy"
+                        alt={`Avatar ${imgIndex + 1}`}
+                        src={image}
+                      />
+                    ))}
+                    <div className="flex flex-col items-start justify-start">
+                      <div className="relative leading-[150%] font-semibold inline-block min-w-[7rem]">
+                        {testimonial.name}
+                      </div>
+                      <div className="relative leading-[150%]">
+                        {testimonial.position}
+                      </div>
+                    </div>
+                    <div className="h-[3.875rem] w-[0.063rem] relative box-border border-r-[1px] border-solid border-black" />
+                    <img
+                      className="h-[3.5rem] w-[8.75rem] relative overflow-hidden"
+                      loading="lazy"
+                      alt=""
+                      src={testimonial.logo}
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            {/* Desktop view */}
+            <div className="hidden md:grid md:grid-cols-2 gap-[2rem] max-w-full">
+              {currentTestimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-start justify-start gap-[2rem] text-left text-[1rem] text-text-primary font-text-regular-normal"
+                >
+                  <div className="overflow-hidden flex flex-row items-start justify-start gap-[0.375rem]">
+                    {[...Array(testimonial.rating)].map((_, starIndex) => (
+                      <img
+                        key={starIndex}
+                        className="h-[1.181rem] w-[1.25rem] relative min-h-[1.188rem]"
+                        alt={`Star ${starIndex + 1}`}
+                        src="/rating-star.svg"
+                      />
+                    ))}
+                  </div>
+                  <div className="self-stretch relative leading-[140%] text-[#202020]">
+                    {testimonial.text}
+                  </div>
+                  <div className="flex flex-row items-center justify-start gap-[1.25rem] max-w-full text-[#202020]">
+                    {testimonial.avatarImages.map((image, imgIndex) => (
+                      <img
+                        key={imgIndex}
+                        className="h-[3.5rem] w-[3.5rem] relative rounded-[50%] object-contain"
+                        loading="lazy"
+                        alt={`Avatar ${imgIndex + 1}`}
+                        src={image}
+                      />
+                    ))}
+                    <div className="flex flex-col items-start justify-start">
+                      <div className="relative leading-[150%] font-semibold inline-block min-w-[7rem]">
+                        {testimonial.name}
+                      </div>
+                      <div className="relative leading-[150%]">
+                        {testimonial.position}
+                      </div>
+                    </div>
+                    <div className="h-[3.875rem] w-[0.063rem] relative box-border border-r-[1px] border-solid border-black" />
+                    <img
+                      className="h-[3.5rem] w-[8.75rem] relative overflow-hidden"
+                      loading="lazy"
+                      alt=""
+                      src={testimonial.logo}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
+          {/* Pagination for both desktop and mobile */}
           <div className="flex flex-row items-center justify-between mt-[2rem]">
             {/* Pagination Circles */}
             <div className="flex gap-[7px] items-center mr-[2rem]">
               {[
-                ...Array(Math.ceil(totalTestimonials / testimonialsPerPage)),
+                ...Array(
+                  Math.ceil(totalTestimonials / testimonialsPerPageMobile)
+                ),
               ].map((_, index) => (
                 <div
                   key={index}
                   className={`h-[0.5rem] w-[0.5rem] rounded-full mb-[0.5rem] ${
-                    index === Math.floor(currentIndex / testimonialsPerPage)
+                    index ===
+                    Math.floor(currentIndex / testimonialsPerPageMobile)
                       ? "bg-black"
                       : "bg-gray-400"
                   }`}
