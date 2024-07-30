@@ -5,16 +5,16 @@ const heroContent = [
   {
     logoDescription: "Trusted by 100 SMBs around the globe",
     title: (
-      <>
+      <div className="text-[35px] md:text-[50px] md:leading-[60px] leading-[42px] ">
         Elevate Your{" "}
-        <span className="text-[50px] font-[400] font-[Playfair] italic text-[#FFC17A]">
+        <span className="md:text-[50px] font-[400] font-[Playfair] italic text-[#FFC17A]">
           Business
         </span>{" "}
         With Professional{" "}
-        <span className="text-[50px] font-[400] font-[Playfair] italic text-[#FFC17A]">
+        <span className="md:text-[50px] font-[400] font-[Playfair] italic text-[#FFC17A]">
           Accounting Services
         </span>
-      </>
+      </div>
     ),
     description:
       "Unlock your business's potential with our expert accounting services. Our dedicated team ensures precision and reliability, helping you navigate financial complexities effortlessly. Let us handle the numbers while you focus on growth.",

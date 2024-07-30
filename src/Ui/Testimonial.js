@@ -1,4 +1,5 @@
 import { useState } from "react";
+import HeadingDescription from "./HeadingDescription";
 
 const testimonials = [
   {
@@ -57,6 +58,13 @@ const testimonials = [
   },
 ];
 
+// Define main heading and description
+
+const mainHeading = "Trusted by Our Happy Customers";
+const highlightedWords = ["Happy Customers"];
+const mainDescription =
+  "Unlock your business's potential with our expert accounting services. Our dedicated team ensures.";
+
 const Testimonial = ({ className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -96,20 +104,17 @@ const Testimonial = ({ className }) => {
   return (
     <div className="relative flex justify-center items-center pt-[min(120px,max(70px,8.785vw))]">
       <div
-        className={`self-stretch flex flex-row items-start justify-center w-full  pb-[0.881rem] box-border max-w-full text-left text-[2rem] text-gray-400 font-text-regular-normal ${className}`}
+        className={`self-stretch flex flex-row items-start justify-center w-full pb-[0.881rem] box-border max-w-full text-left text-[2rem] text-gray-400 font-text-regular-normal ${className}`}
       >
         <div className="flex flex-col w-[80%] gap-[5rem] max-w-full">
           <div className="flex flex-col items-start justify-start gap-[1.25rem] max-w-full">
-            <h1 className="m-0 text-inherit tracking-[0.01em] font-inherit text-[#202020]">
-              <span className="font-medium">Trusted by Our </span>
-              <i className="font-medium text-[#214651]">Happy Customers</i>
-            </h1>
-            <div className=" md:w-[27.188rem] text-[1rem] text-[#202020] leading-[1.688rem]">
-              Experience unmatched quality and expertise. We're here to help you
-              succeed and grow
-            </div>
+            <HeadingDescription
+              heading={mainHeading}
+              description={mainDescription}
+              highlightedWords={highlightedWords}
+            />
           </div>
-          <div className="flex  grid gap-[2rem] max-w-full">
+          <div className=" grid gap-[2rem] max-w-full">
             {/* Display testimonials based on screen size */}
             <div className="block md:hidden">
               {currentTestimonialsMobile.map((testimonial, index) => (

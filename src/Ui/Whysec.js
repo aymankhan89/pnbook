@@ -1,4 +1,5 @@
 import React from "react";
+import HeadingDescription from "./HeadingDescription"; // Adjust path if needed
 
 const Card = ({ heading, description }) => (
   <div className="rounded-[15px] p-4 w-full md:w-[542px]">
@@ -31,33 +32,29 @@ const Whysec = () => {
   const mainHeading = "How We Make Finances Easy";
   const highlightedWords = [" Finances Easy"];
   const mainDescription =
-    "Unlock your business's potential with our expert accounting services. Our dedicated team provides you with insights and tools to drive your business forward.";
-
-  const getHighlightedText = (text, highlights) => {
-    const parts = text.split(new RegExp(`(${highlights.join("|")})`, "gi"));
-    return parts.map((part, index) =>
-      highlights.includes(part) ? (
-        <span key={index} className="font-[500] italic text-[#214651]">
-          {part}
-        </span>
-      ) : (
-        part
-      )
-    );
-  };
+    "Unlock your business's potential with our expert accounting services. Our dedicated.";
+  // const getHighlightedText = (text, highlights) => {
+  //   const parts = text.split(new RegExp(`(${highlights.join("|")})`, "gi"));
+  //   return parts.map((part, index) =>
+  //     highlights.includes(part) ? (
+  //       <span key={index} className="font-[500] italic text-[#214651]">
+  //         {part}
+  //       </span>
+  //     ) : (
+  //       part
+  //     )
+  //   );
+  // };
 
   return (
     <div className="pt-[120px] text-black flex w-full justify-center items-center">
       <div className="relative w-[90%] md:w-[85%] flex flex-col md:flex-row">
         <div className="flex-1 mb-8 md:mb-0 md:pr-8">
-          <div className="pb-[60px]">
-            <p className="text-[30px] md:text-[35px] font-[500] mb-4 w-full md:w-[457px]">
-              {getHighlightedText(mainHeading, highlightedWords)}
-            </p>
-            <p className="text-[16px] md:text-[17px] font-[400] mb-8 w-full md:w-[384px]">
-              {mainDescription}
-            </p>
-          </div>
+          <HeadingDescription
+            heading={mainHeading}
+            description={mainDescription}
+            highlightedWords={highlightedWords}
+          />
           <div className="flex flex-col gap-[40px] md:gap-[65px]">
             {cardData.map((card, index) => (
               <Card

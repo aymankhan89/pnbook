@@ -1,4 +1,5 @@
 import React from "react";
+import HeadingDescription from "./HeadingDescription";
 
 const Testing = () => (
   <svg
@@ -182,33 +183,32 @@ const Benefit = () => {
   const mainDescription =
     "Unlock your business's potential with our expert accounting services. Our dedicated team ensures.";
 
-  const getHighlightedText = (text, highlights) => {
-    const parts = text.split(new RegExp(`(${highlights.join("|")})`, "gi"));
-    return parts.map((part, index) =>
-      highlights.includes(part) ? (
-        <span
-          key={index}
-          className="font-[500] italic text-[#214651] text-[40px]"
-        >
-          {part}
-        </span>
-      ) : (
-        part
-      )
-    );
-  };
+  // const getHighlightedText = (text, highlights) => {
+  //   const parts = text.split(new RegExp(`(${highlights.join("|")})`, "gi"));
+  //   return parts.map((part, index) =>
+  //     highlights.includes(part) ? (
+  //       <span
+  //         key={index}
+  //         className="font-[500] italic text-[#214651] text-[40px]"
+  //       >
+  //         {part}
+  //       </span>
+  //     ) : (
+  //       part
+  //     )
+  //   );
+  // };
 
   return (
     <div className="pt-[20px]">
       <div className="flex w-full justify-center items-center">
         <div className="relative p-8 flex flex-col md:flex-row px-[30px] py-[60px] md:py-[128px] w-full md:w-[90%]">
           <div className="flex-1 flex flex-col justify-start text-left text-black z-10 mb-8 md:mb-0">
-            <p className="text-[30px] md:text-[40px] font-[500] mb-4 w-full md:w-[565px]">
-              {getHighlightedText(mainHeading, highlightedWords)}
-            </p>
-            <p className="text-[16px] md:text-[17px] font-[400] mb-8 w-full md:w-[506px]">
-              {mainDescription}
-            </p>
+            <HeadingDescription
+              heading={mainHeading}
+              description={mainDescription}
+              highlightedWords={highlightedWords}
+            />
             <Testing />
           </div>
           <div className=" md:flex-1 md:grid md:grid-cols-2 gap-[40px] md:gap-[60px]">
