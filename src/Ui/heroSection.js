@@ -25,7 +25,6 @@ const heroContent = [
     mobileImage: "/Subtract.svg", // Mobile image path
     desktopImage: "/herSectionImg.svg", // Desktop image path
   },
-  // You can add more content objects here if needed
 ];
 
 function HeroSection({

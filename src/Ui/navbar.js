@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import menuIcon from "../menu.svg"; // Adjust the path if necessary
 import closeIcon from "../Close.svg"; // Adjust the path if necessary
@@ -13,29 +13,39 @@ function Navbar() {
   ]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
-  const Icon = useNavigate();
+  const location = useLocation();
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
+  const isActive = (path) => {
+    return location.pathname === path
+      ? "text-[#214651] font-[600] border-t-[2px] border-[#214651] h-full items-center flex justify-center"
+      : "text-[#000000] font-[400]";
+  };
+
   return (
-    <div className="w-full flex justify-center">
-      <div className="pt-[30px] w-[90%]">
-        <div className="w-full px-[64px] border rounded-[15px] h-[65px] flex justify-between items-center bg-white shadow-md">
+    <div className="w-full flex justify-center mt-[30px]">
+      <div className="h-[70px] w-[90%]">
+        <div className="w-full px-[64px] border rounded-[15px] h-[65px] flex justify-between items-center bg-white shadow-md relative">
           {/* logo */}
           <div className="flex">
             <img
-              src="/Maskgroup.svg"
+              src="/PNLogo.svg"
               alt="Logo"
-              onClick={() => Icon("/")}
-              className="cursor-pointer"
+              onClick={() => navigate("/")}
+              className="cursor-pointer w-[36px] h-[40px]"
             />
           </div>
           {/* navlinks for desktop */}
-          <div className="hidden md:flex gap-[60px] text-[#000000] font-[400] text-[16px]">
+          <div className="hidden  md:flex gap-[60px] text-[16px] h-full items-center justify-center ">
             {navItems.map((item) => (
-              <Link key={item.path} to={item.path}>
+              <Link
+                key={item.path}
+                to={item.path}
+                className={isActive(item.path)}
+              >
                 {item.name}
               </Link>
             ))}
@@ -67,7 +77,7 @@ function Navbar() {
           <img
             src="/Maskgroup.svg"
             alt="Logo"
-            onClick={() => Icon("/")}
+            onClick={() => navigate("/")}
             className="cursor-pointer w-8 h-8"
           />
           <button onClick={toggleSidebar}>
