@@ -10,6 +10,12 @@ import Testimonial from "../Ui/Testimonial";
 import Article from "../Ui/Article";
 import ContactUs from "../Ui/ContactUs";
 import Footer from "../Ui/Footer";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../Ui/Accordian";
 
 function App() {
   return (
@@ -25,6 +31,14 @@ function App() {
       <Article />
       <ContactUs />
       <Footer />
+      <Accordion type="single" collapsible>
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Is it accessible?</AccordionTrigger>
+          <AccordionContent>
+            Yes. It adheres to the WAI-ARIA design pattern.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </div>
   );
 }

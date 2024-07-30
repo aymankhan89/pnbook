@@ -1,13 +1,43 @@
 import React from "react";
 
+// Define an array of content objects
+const heroContent = [
+  {
+    logoDescription: "Trusted by 100 SMBs around the globe",
+    title: (
+      <>
+        Elevate Your{" "}
+        <span className="text-[50px] font-[400] font-[Playfair] italic text-[#FFC17A]">
+          Business
+        </span>{" "}
+        With Professional{" "}
+        <span className="text-[50px] font-[400] font-[Playfair] italic text-[#FFC17A]">
+          Accounting Services
+        </span>
+      </>
+    ),
+    description:
+      "Unlock your business's potential with our expert accounting services. Our dedicated team ensures precision and reliability, helping you navigate financial complexities effortlessly. Let us handle the numbers while you focus on growth.",
+    primaryButtonText: "Get started",
+    primaryButtonLink: "#",
+    secondaryButtonText: "Get In Touch",
+    secondaryButtonLink: "#",
+    mobileImage: "/Subtract.svg", // Mobile image path
+    desktopImage: "/herSectionImg.svg", // Desktop image path
+  },
+  // You can add more content objects here if needed
+];
+
 function HeroSection({
-  logoDesciption = "Trusted by 100 SMBs around the globe",
-  title = "Elevate Your Business With Professional Accounting Services",
-  description = "Unlock your business's potential with our expert accounting services. Our dedicated team ensures precision and reliability, helping you navigate financial complexities effortlessly. Let us handle the numbers while you focus on growth.",
-  primaryButtonText = "Get started",
-  primaryButtonLink = "#",
-  secondaryButtonText = "Get In Touch",
-  secondaryButtonLink = "#",
+  logoDescription,
+  title,
+  description,
+  primaryButtonText,
+  primaryButtonLink,
+  secondaryButtonText,
+  secondaryButtonLink,
+  mobileImage,
+  desktopImage,
 }) {
   return (
     <div className="w-full flex justify-center items-center">
@@ -16,28 +46,28 @@ function HeroSection({
           <div className="flex flex-col col-span-12 lg:col-start-1 lg:col-end-6 items-start lg:items-start">
             <div className="flex flex-col gap-[13px] pb-10">
               <img className="w-[85px] h-[21px]" src="/trustLogos.svg" alt="" />
-              <p className="font-[400] text-[15px] text-[#FBFBFB]">
-                {logoDesciption}
+              <p className="text-[15px] font-[400]  text-[#F5F5F5]">
+                {logoDescription}
               </p>
             </div>
             <div className="w-full lg:w-[738px] flex flex-col gap-[25px]">
-              <h1 className="text-[32px] lg:text-[45px] font-[500] text-[#F9F9F9] leading-[40px] lg:leading-[60px]">
+              <h1 className="text-[50px] font-[500]  text-[#F5F5F5] leading-[60px]">
                 {title}
               </h1>
-              <p className="font-[400] text-[14px] lg:text-[17px] text-[#FBFBFB]">
+              <p className="text-[17px] font-[400]  text-[#F5F5F5]">
                 {description}
               </p>
             </div>
-            <div className="flex gap-[20px] pt-[30px] lg:pt-[60px]">
+            <div className="flex gap-5 pt-7 lg:pt-14">
               <a
                 href={primaryButtonLink}
-                className="text-[#214651] border text-[14px] lg:text-[16px] font-[600] h-[42px] w-[121px] rounded-[11px] bg-[#FBFBFB] flex items-center justify-center"
+                className="text-[#214651] border text-sm lg:text-base font-semibold h-[42px] w-[121px] rounded-[11px] bg-[#FBFBFB] flex items-center justify-center"
               >
                 {primaryButtonText}
               </a>
               <a
                 href={secondaryButtonLink}
-                className="text-[#FBFBFB] border text-[14px] lg:text-[16px] font-[400] h-[42px] w-[121px] rounded-[11px] flex items-center justify-center"
+                className="text-[#FBFBFB] border text-sm lg:text-base font-normal h-[42px] w-[121px] rounded-[11px] flex items-center justify-center"
               >
                 {secondaryButtonText}
               </a>
@@ -48,7 +78,7 @@ function HeroSection({
             <div className="block lg:hidden w-full flex justify-center">
               <img
                 className="w-[90%] max-w-[400px] h-auto"
-                src="/Subtract.svg" // Mobile image path
+                src={mobileImage}
                 alt="mockup mobile"
               />
             </div>
@@ -56,7 +86,7 @@ function HeroSection({
             <div className="hidden lg:flex w-full lg:w-auto justify-center">
               <img
                 className="w-[90%] max-w-[600px] h-auto"
-                src="/herSectionImg.svg" // Desktop image path
+                src={desktopImage}
                 alt="mockup"
               />
             </div>
@@ -67,4 +97,23 @@ function HeroSection({
   );
 }
 
-export default HeroSection;
+function App() {
+  // Choose the content to be displayed
+  const content = heroContent[0];
+
+  return (
+    <HeroSection
+      logoDescription={content.logoDescription}
+      title={content.title}
+      description={content.description}
+      primaryButtonText={content.primaryButtonText}
+      primaryButtonLink={content.primaryButtonLink}
+      secondaryButtonText={content.secondaryButtonText}
+      secondaryButtonLink={content.secondaryButtonLink}
+      mobileImage={content.mobileImage}
+      desktopImage={content.desktopImage}
+    />
+  );
+}
+
+export default App;
