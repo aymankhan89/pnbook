@@ -19,9 +19,9 @@ const heroContent = [
     description:
       "Unlock your business's potential with our expert accounting services. Our dedicated team ensures precision and reliability, helping you navigate financial complexities effortlessly. Let us handle the numbers while you focus on growth.",
     primaryButtonText: "Get started",
-    primaryButtonLink: "#",
+    primaryButtonLink: "#contact-form", // Scrolls to contact form
     secondaryButtonText: "Get In Touch",
-    secondaryButtonLink: "#",
+    secondaryButtonLink: "/contact", // Separate contact page
     mobileImage: "/Subtract.svg", // Mobile image path
     desktopImage: "/herSectionImg.svg", // Desktop image path
   },
@@ -45,15 +45,15 @@ function HeroSection({
           <div className="flex flex-col col-span-12 lg:col-start-1 lg:col-end-6 items-start lg:items-start">
             <div className="flex flex-col gap-[13px] pb-10">
               <img className="w-[85px] h-[21px]" src="/trustLogos.svg" alt="" />
-              <p className="text-[15px] font-[400]  text-[#F5F5F5]">
+              <p className="text-[15px] font-[400] text-[#F5F5F5]">
                 {logoDescription}
               </p>
             </div>
             <div className="w-full lg:w-[738px] flex flex-col gap-[25px]">
-              <h1 className="text-[50px] font-[500]  text-[#F5F5F5] leading-[60px]">
+              <h1 className="text-[50px] font-[500] text-[#F5F5F5] leading-[60px]">
                 {title}
               </h1>
-              <p className="text-[17px] font-[400]  text-[#F5F5F5]">
+              <p className="text-[17px] font-[400] text-[#F5F5F5]">
                 {description}
               </p>
             </div>
@@ -74,7 +74,7 @@ function HeroSection({
           </div>
           <div className="flex flex-col lg:flex-row col-span-12 lg:col-start-8 lg:col-end-13 items-center mt-8 lg:mt-0">
             {/* Mobile Image */}
-            <div className="block lg:hidden w-full flex justify-center">
+            <div className="lg:hidden w-full flex justify-center">
               <img
                 className="w-[90%] max-w-[400px] h-auto"
                 src={mobileImage}
@@ -101,17 +101,19 @@ function App() {
   const content = heroContent[0];
 
   return (
-    <HeroSection
-      logoDescription={content.logoDescription}
-      title={content.title}
-      description={content.description}
-      primaryButtonText={content.primaryButtonText}
-      primaryButtonLink={content.primaryButtonLink}
-      secondaryButtonText={content.secondaryButtonText}
-      secondaryButtonLink={content.secondaryButtonLink}
-      mobileImage={content.mobileImage}
-      desktopImage={content.desktopImage}
-    />
+    <>
+      <HeroSection
+        logoDescription={content.logoDescription}
+        title={content.title}
+        description={content.description}
+        primaryButtonText={content.primaryButtonText}
+        primaryButtonLink={content.primaryButtonLink}
+        secondaryButtonText={content.secondaryButtonText}
+        secondaryButtonLink={content.secondaryButtonLink}
+        mobileImage={content.mobileImage}
+        desktopImage={content.desktopImage}
+      />
+    </>
   );
 }
 
