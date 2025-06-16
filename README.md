@@ -1,40 +1,96 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+
+# 📘 ProficientNow Books
+
+**ProficientNow Books** is a modern, professional accounting services landing page, designed to promote bookkeeping, financial reporting, tax preparation, and payroll services for small and mid-sized businesses (SMBs).
+
+🔗 **Live Website**: [https://pnbook.vercel.app](https://pnbook.vercel.app)
+
+> 💼 This project showcases a real-world, responsive business website. It was built to strengthen my frontend development skills and demonstrate how design and content work together for a professional service brand.
+
+---
+
+## ✨ Features
+
+- ✅ Clean, modern business design
+- ✅ Fully responsive across devices
+- ✅ Call-to-action buttons to drive engagement
+- ✅ Service highlights and benefits
+- ✅ Testimonials and blog section
+- ✅ Integrated contact form
+
+---
+
+## 🛠️ Built With
+
+- **HTML5**
+- **CSS3**
+- **JavaScript (Vanilla)**
+- [Tailwind CSS](https://tailwindcss.com/) (optional if used)
+- **Vercel** for deployment
+
+---
+
+## 🖼️ Sections Overview
+
+- **Hero Section** – Bold headline, subtext, and CTA
+- **Services** – Overview of core offerings (bookkeeping, payroll, etc.)
+- **Benefits** – Why businesses should choose you
+- **Client Testimonials** – Customer feedback to build trust
+- **Latest Articles** – Placeholder blog previews
+- **Contact Form** – User-friendly inquiry form
+
+---
+
+## 🚀 Getting Started Locally
+
+To run this project locally:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/aymankhan89/pnbook.git
+cd pnbook
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then simply open `index.html` in your browser.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+If you used Tailwind via CDN, no build steps are needed. If you used Tailwind with PostCSS or npm, you'll need to run:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+npm install
+npm run build
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 📚 What I Learned
 
-## Learn More
+* Structuring a real-world service website
+* Using Tailwind CSS for responsive design
+* Creating a strong UI/UX with business goals in mind
+* Building multi-section landing pages
+* Hosting and deploying on Vercel
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📌 Credits
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+* Icons & mockups by [Heroicons](https://heroicons.com/) or other open-source tools
+* Inspiration from real accounting websites and SaaS UI templates
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+## 🪪 License
+
+This project is for **educational and portfolio** purposes only. Not affiliated with any actual accounting firm.
+
+---
+
+### ✅ Status: Completed
+
+
+
+
